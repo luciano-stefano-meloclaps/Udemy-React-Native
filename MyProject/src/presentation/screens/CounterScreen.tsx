@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import PrimaryButton from '../components/shared/PrimaryButton';
+import FloatingIcon from '../components/shared/FloatingIcon';
 
 export const CounterScreen = () => {
   // Estado local del contador. Inicializamos en 5 por ejemplo.
@@ -32,17 +33,19 @@ export const CounterScreen = () => {
         <PrimaryButton
           label="Sumar"
           onPress={increment}
-          style={styles.button}
+          style={[styles.button, styles.buttonSum]}
         />
 
-        {/* Aquí añadimos `onLongPress` para resetear el contador si se pulsa largo */}
+        {/* El reset ya no está en long-press del botón Restar; sólo en el FAB */}
         <PrimaryButton
           label="Restar"
           onPress={decrement}
-          onLongPress={reset}
-          style={styles.button}
+          style={[styles.button, styles.buttonRest]}
         />
       </View>
+
+      {/* Floating action button: reset */}
+      <FloatingIcon onPress={reset} style={styles.fab} />
     </View>
   );
 };
@@ -58,5 +61,8 @@ const styles = StyleSheet.create({
   counter: { fontSize: 20, marginBottom: 12 },
   row: { flexDirection: 'row', justifyContent: 'center' },
   button: { marginHorizontal: 6 },
-  decreaseButton: { backgroundColor: '#FF4D4F' },
+  buttonSum: { backgroundColor: '#43a047' },
+  buttonRest: { backgroundColor: '#e53935' },
+  fab: { backgroundColor: '#6592c0' },
+  decreaseButton: { backgroundColor: '#c76365' },
 });

@@ -14,7 +14,12 @@ type Props = {
   style?: ViewStyle | any;
 };
 
-const PrimaryButton: React.FC<Props> = ({ label, onPress, onLongPress, style }) => {
+const PrimaryButton: React.FC<Props> = ({
+  label,
+  onPress,
+  onLongPress,
+  style,
+}) => {
   return (
     <Pressable
       onPress={onPress}
