@@ -7,6 +7,7 @@ interface Props {
   color?: string;
   flexGrow?: number;
   colorTextBlack?: boolean;
+  onPress: () => void;
 
   /*width?: number;*/
 }
@@ -16,10 +17,12 @@ export const CalculatorButton = ({
   color = colors.darkGray,
   flexGrow,
   colorTextBlack = false,
+  onPress,
 }: /*width*/
 Props) => {
   return (
     <Pressable
+      onPress={() => onPress()}
       style={({ pressed }) => ({
         ...styles.button,
         backgroundColor: color,
