@@ -34,6 +34,7 @@ const PrimaryButton: React.FC<Props> = ({
 
 const styles = StyleSheet.create({
   button: {
+    margin: 8,
     backgroundColor: '#1976D2',
     paddingVertical: 10,
     paddingHorizontal: 16,
