@@ -1,11 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 // Operadores disponibles para la próxima etapa de evaluación.
 enum Operator {
-  add,
-  subtract,
-  multiply,
-  divide,
+  add = '+',
+  subtract = '-',
+  multiply = 'x',
+  divide = '÷',
 }
 
 export const useCalculator = () => {
@@ -13,12 +13,26 @@ export const useCalculator = () => {
   // Conserva el operando mostrado al seleccionar una operación.
   const [previousNumber, setPreviousNumber] = useState('0');
 
+  const [formula, setFormula] = useState('');
+
   // Guarda la operación elegida sin provocar un render adicional.
-  const lastOperation = useRef<Operator>();
+  const lastOperation = useRef<Operator | undefined>(undefined);
+
+  useEffect(() => {
+    if (lastOperation.current) {
+      const firstFormulaPart = formula.split(' ').at(0);
+      setFormula(`${firstFormulaPart} ${lastOperation.current} ${number}`);
+    } else {
+      setFormula(number);
+    }
+  }, [formula, number]);
 
   const cleanNumber = () => {
     setNumber('0');
     setPreviousNumber('0');
+
+    lastOperation.current = undefined;
+    setFormula('');
   };
 
   const deleteOperation = () => {
@@ -105,10 +119,44 @@ export const useCalculator = () => {
     setLastNumber();
     lastOperation.current = Operator.add;
   };
+
+  const calculateResult = () => {
+    const result = calculateSubResult();
+    setNumber(result.toString());
+    setPreviousNumber('0');
+    setFormula(result.toString());
+
+    lastOperation.current = undefined;
+  };
+
+  const calculateSubResult = (): number => {
+    const [fisrtValue, operation, seconValue] = formula.split(' ');
+
+    const num1 = Number(fisrtValue);
+    const num2 = Number(seconValue);
+
+    if (isNaN(num2)) return num1;
+
+    switch (operation) {
+      case Operator.add:
+        return num1 + num2;
+      case Operator.subtract:
+        return num1 - num2;
+      case Operator.multiply:
+        return num1 * num2;
+      case Operator.divide:
+        return num1 / num2;
+
+      default:
+        throw new Error('Operación no válida');
+    }
+  };
+
   return {
     //Properties
     number,
     previousNumber,
+    formula,
 
     //Methods
     buildNumber,
@@ -119,5 +167,6 @@ export const useCalculator = () => {
     multiplyOperation,
     subtractOperation,
     addOperation,
+    calculateResult,
   };
 };
