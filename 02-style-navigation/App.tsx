@@ -1,17 +1,13 @@
 import React from 'react';
 import { Provider as PaperProvider } from 'react-native-paper';
-import { HomeWorkScreen8 } from './src/presentation/screens/HomeWorkScreen8';
 import { NavigationContainer } from '@react-navigation/native';
-import { View, Text } from 'react-native';
-
+import 'react-native-gesture-handler';
+import { StackNavigator } from './src/presentation/routes/StackNavigator';
 export const App = () => {
   return (
     <NavigationContainer>
       <PaperProvider>
-        <HomeWorkScreen8 />
-        <View>
-          <Text>Hello, React Native!</Text>
-        </View>
+        <StackNavigator />
       </PaperProvider>
     </NavigationContainer>
   );

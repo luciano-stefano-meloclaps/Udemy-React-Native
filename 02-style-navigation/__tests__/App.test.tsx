@@ -8,6 +8,7 @@ import App from '../App';
 
 test('renders correctly', async () => {
   await ReactTestRenderer.act(() => {
-    ReactTestRenderer.create(<App />);
+    const renderer = ReactTestRenderer.create(<App />);
+    renderer.unmount();
   });
 });

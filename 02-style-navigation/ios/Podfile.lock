@@ -1673,6 +1673,50 @@ PODS:
     - React-utils (= 0.87.0)
     - ReactNativeDependencies
   - ReactNativeDependencies (0.87.0)
+  - RNCMaskedView (0.3.2):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-bridging
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
+  - RNGestureHandler (3.2.1):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-bridging
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
   - RNScreens (4.27.0):
     - hermes-engine
     - RCTRequired
@@ -1833,6 +1877,8 @@ DEPENDENCIES:
   - ReactCodegen (from `build/generated/ios/ReactCodegen`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeDependencies (from `../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec`)
+  - "RNCMaskedView (from `../node_modules/@react-native-masked-view/masked-view`)"
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - SocketRocket (from `build/rndeps-facades/SocketRocket`)
@@ -2008,6 +2054,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeDependencies:
     :podspec: "../node_modules/react-native/third-party-podspecs/ReactNativeDependencies.podspec"
+  RNCMaskedView:
+    :path: "../node_modules/@react-native-masked-view/masked-view"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   RNVectorIcons:
@@ -2102,6 +2152,8 @@ SPEC CHECKSUMS:
   ReactCodegen: b54c2a8d91c25df024024b078e9fd3cdf93ce8cf
   ReactCommon: 31d05b76329c8b3c9ef37fff8212f830925a2535
   ReactNativeDependencies: ec5530432d8191b38e278117d498aaff05ea9d6f
+  RNCMaskedView: 3a86e6842bfc3ec3220c15b417e086b81af4d726
+  RNGestureHandler: 5e1c745ac4a6cff75b0fd1cba7aba8029b06c335
   RNScreens: cdfdbb0050779d8a879038774be539b584204730
   RNVectorIcons: 25076d7c4d9fbd847fb22590143f31d9758a48b4
   SocketRocket: d57b1af80c029e12a75cd9b218287c67381e4593
