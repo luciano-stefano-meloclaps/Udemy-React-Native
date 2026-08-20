@@ -1,10 +1,24 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+
+// Operadores disponibles para la próxima etapa de evaluación.
+enum Operator {
+  add,
+  subtract,
+  multiply,
+  divide,
+}
 
 export const useCalculator = () => {
   const [number, setNumber] = useState('0');
+  // Conserva el operando mostrado al seleccionar una operación.
+  const [previousNumber, setPreviousNumber] = useState('0');
+
+  // Guarda la operación elegida sin provocar un render adicional.
+  const lastOperation = useRef<Operator>();
 
   const cleanNumber = () => {
     setNumber('0');
+    setPreviousNumber('0');
   };
 
   const deleteOperation = () => {
@@ -58,14 +72,52 @@ export const useCalculator = () => {
     }
     setNumber(number + numberString);
   };
+
+  const setLastNumber = () => {
+    if (number.endsWith('.')) {
+      setPreviousNumber(number.slice(0, -1));
+    } else {
+      setPreviousNumber(number);
+    }
+    setNumber('0');
+  };
+
+  // Selecciona la división y prepara la entrada del siguiente número.
+  const divideOperation = () => {
+    setLastNumber();
+    lastOperation.current = Operator.divide;
+  };
+
+  // Selecciona la multiplicación y prepara la entrada del siguiente número.
+  const multiplyOperation = () => {
+    setLastNumber();
+    lastOperation.current = Operator.multiply;
+  };
+
+  // Selecciona la resta y prepara la entrada del siguiente número.
+  const subtractOperation = () => {
+    setLastNumber();
+    lastOperation.current = Operator.subtract;
+  };
+
+  // Selecciona la suma y prepara la entrada del siguiente número.
+  const addOperation = () => {
+    setLastNumber();
+    lastOperation.current = Operator.add;
+  };
   return {
     //Properties
     number,
+    previousNumber,
 
     //Methods
     buildNumber,
     cleanNumber,
     deleteOperation,
     toggleSign,
+    divideOperation,
+    multiplyOperation,
+    subtractOperation,
+    addOperation,
   };
 };
