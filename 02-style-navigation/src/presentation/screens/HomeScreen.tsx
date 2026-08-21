@@ -47,6 +47,10 @@ const HomeScreen = () => {
         label="Go to 1"
         onPress={() => navigation.navigate('HomeWorkScreen' as never)}
       ></PrimaryButton>
+      <PrimaryButton
+        label="Go to Product"
+        onPress={() => navigation.navigate('ProductScreen' as never)}
+      ></PrimaryButton>
     </View>
   );
 };
