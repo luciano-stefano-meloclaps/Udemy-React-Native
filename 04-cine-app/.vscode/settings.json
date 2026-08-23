@@ -1,0 +1,8 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "/^git remote add origin https://github\\.com/luciano-stefano-meloclaps/Udemy-React-Native\\.git && git fetch origin && git --no-pager ls-tree --name-only origin/main$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}
