@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { useMovie } from '../../hooks/useMovie';
+import { usePopularMovies } from '../../hooks/usePopularMovies';
 
 export const HomeScreen = () => {
-  useMovie();
+  usePopularMovies();
 
   return (
     <View>
