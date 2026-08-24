@@ -1,4 +1,6 @@
-export type MovieResponse = {
+// Estos nombres de propiedades vienen directamente de la respuesta de TMDB.
+// Por eso mantienen el formato snake_case de la API.
+export type Movie = {
   id: number;
   title: string;
   overview: string;
@@ -8,9 +10,10 @@ export type MovieResponse = {
   vote_average: number;
 };
 
-export type NowPlayingResponse = {
+// TMDB devuelve las peliculas dentro de results junto con datos de paginacion.
+export type PopularMoviesResponse = {
   page: number;
-  results: MovieResponse[];
+  results: Movie[];
   total_pages: number;
   total_results: number;
 };
