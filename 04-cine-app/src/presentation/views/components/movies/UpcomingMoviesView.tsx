@@ -1,6 +1,6 @@
 import React from 'react';
 import { MoviesSection } from './MoviesSection';
-import { useUpcomingMovies } from '../../viewmodels/movies';
+import { useUpcomingMovies } from '../../../viewmodels/movies';
 
 /**
  * Componente contenedor (View) para la sección de películas próximas a estrenarse.

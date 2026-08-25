@@ -1,6 +1,6 @@
 import React from 'react';
 import { MoviesSection } from './MoviesSection';
-import { usePopularMovies } from '../../viewmodels/movies';
+import { usePopularMovies } from '../../../viewmodels/movies';
 
 /**
  * Componente contenedor (View) que conecta el ViewModel con los componentes visuales.
