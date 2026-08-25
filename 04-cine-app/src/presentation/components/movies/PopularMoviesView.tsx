@@ -2,18 +2,24 @@ import React from 'react';
 import { PopularMoviesSection } from './PopularMoviesSection';
 import { usePopularMovies } from '../../hooks/usePopularMovies';
 
-// Este componente conecta el ViewModel con los componentes visuales.
-// La pantalla Home solo necesita renderizar este componente.
+/**
+ * Componente contenedor (View) que conecta el ViewModel con los componentes visuales.
+ *
+ * Este componente es responsable de:
+ * 1. Obtener datos usando el hook usePopularMovies (ViewModel)
+ * 2. Pasar esos datos al componente de presentación PopularMoviesSection
+ *
+ * Patrón de arquitectura: View = ViewModel + Presentation Component
+ */
 export const PopularMoviesView = () => {
-  const { popularMovies, isLoading, errorMessage, reloadPopularMovies } =
-    usePopularMovies();
+  const { movies, isLoading, errorMessage, retry } = usePopularMovies();
 
   return (
     <PopularMoviesSection
-      movies={popularMovies}
+      movies={movies}
       isLoading={isLoading}
       errorMessage={errorMessage}
-      onRetry={reloadPopularMovies}
+      onRetry={retry}
     />
   );
 };
