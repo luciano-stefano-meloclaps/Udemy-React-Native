@@ -1,6 +1,6 @@
 import React from 'react';
 import { MoviesSection } from './MoviesSection';
-import { useTopRatedMovies } from '../../viewmodels/movies';
+import { useTopRatedMovies } from '../../../viewmodels/movies';
 
 /**
  * Componente contenedor (View) para la sección de películas mejor calificadas.
