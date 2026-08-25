@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { Movie } from '../../../infra/api/movies/movies.types';
+import { Movie } from '../../../data/movies';
 
 /**
  * Props para el componente MovieCard.
@@ -19,6 +19,8 @@ const TMDB_IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
 /**
  * Componente que renderiza una tarjeta individual de película.
+ *
+ * View Component (Presentacional) - Layer Vista.
  *
  * Muestra:
  * - Poster de la película (con placeholder si no existe)

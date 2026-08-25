@@ -1,14 +1,13 @@
 import { useCallback, useEffect, useState } from 'react';
 import { THE_MOVIE_DB_KEY } from '@env';
-import { getPopularMovies } from '../../infra/api/movies/movies.model';
-import { Movie } from '../../infra/api/movies/movies.types';
+import { getTopRatedMovies, Movie } from '../../../data/movies';
 
 /**
- * Resultado del hook usePopularMovies.
- * Contiene el estado y las acciones disponibles para películas populares.
+ * Resultado del hook useTopRatedMovies.
+ * Contiene el estado y las acciones disponibles para películas mejor calificadas.
  */
-export interface UsePopularMoviesResult {
-  /** Lista de películas populares obtenidas */
+export interface UseTopRatedMoviesResult {
+  /** Lista de películas mejor calificadas obtenidas */
   movies: Movie[];
   /** Indica si se está cargando la información */
   isLoading: boolean;
@@ -19,10 +18,11 @@ export interface UsePopularMoviesResult {
 }
 
 /**
- * Hook especializado para obtener películas populares.
+ * Hook especializado para obtener películas mejor calificadas.
  *
+ * ViewModel para la sección "Películas Mejor Calificadas".
  * Gestiona completamente:
- * - Carga de datos desde la API
+ * - Carga de datos desde la capa Data (movies.api)
  * - Estados de carga y error
  * - Reintentos en caso de falla
  *
@@ -31,7 +31,7 @@ export interface UsePopularMoviesResult {
  *
  * @returns Objeto con películas, estado, errores y función retry
  */
-export const usePopularMovies = (): UsePopularMoviesResult => {
+export const useTopRatedMovies = (): UseTopRatedMoviesResult => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -45,12 +45,12 @@ export const usePopularMovies = (): UsePopularMoviesResult => {
     setErrorMessage(null);
 
     try {
-      const response = await getPopularMovies(THE_MOVIE_DB_KEY.trim());
+      const response = await getTopRatedMovies(THE_MOVIE_DB_KEY.trim());
       setMovies(response.results);
     } catch (error) {
-      console.error('Error cargando películas populares:', error);
+      console.error('Error cargando películas mejor calificadas:', error);
       setErrorMessage(
-        'No pudimos cargar las películas populares. Por favor, intenta de nuevo.',
+        'No pudimos cargar las películas mejor calificadas. Por favor, intenta de nuevo.',
       );
     } finally {
       setIsLoading(false);

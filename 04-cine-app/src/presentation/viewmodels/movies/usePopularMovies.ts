@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { THE_MOVIE_DB_KEY } from '@env';
-import { getPopularMovies } from '../../infra/api/movies/movies.model';
-import { Movie } from '../../infra/api/movies/movies.types';
+import { getPopularMovies, Movie } from '../../../data/movies';
 
 /**
  * Resultado del hook usePopularMovies.
@@ -21,8 +20,9 @@ export interface UsePopularMoviesResult {
 /**
  * Hook especializado para obtener películas populares.
  *
+ * ViewModel para la sección "Películas Populares".
  * Gestiona completamente:
- * - Carga de datos desde la API
+ * - Carga de datos desde la capa Data (movies.api)
  * - Estados de carga y error
  * - Reintentos en caso de falla
  *

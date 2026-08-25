@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Movie } from '../../../infra/api/movies/movies.types';
+import { Movie } from '../../../data/movies';
 import { MovieCard } from './MovieCard';
 
 /**
@@ -27,6 +27,8 @@ type MoviesSectionProps = {
 
 /**
  * Componente genérico que renderiza una sección horizontal de películas.
+ *
+ * View Component (Presentacional) - Layer Vista.
  *
  * Maneja tres estados:
  * 1. Cargando: Muestra spinner

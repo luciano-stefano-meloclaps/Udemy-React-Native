@@ -1,11 +1,15 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
-import { PopularMoviesView } from '../../components/movies/PopularMoviesView';
-import { TopRatedMoviesView } from '../../components/movies/TopRatedMoviesView';
-import { UpcomingMoviesView } from '../../components/movies/UpcomingMoviesView';
+import {
+  PopularMoviesView,
+  TopRatedMoviesView,
+  UpcomingMoviesView,
+} from '../../components/movies';
 
 /**
  * Pantalla principal que muestra todas las secciones de películas.
+ *
+ * View Screen (Pantalla Principal) - Layer Vista.
  *
  * Estructura:
  * - Películas populares: Las más vistas en este momento

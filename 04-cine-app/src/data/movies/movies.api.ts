@@ -26,7 +26,9 @@ const fetchMoviesFromTmdb = async (
 
     // fetch no lanza un error automáticamente cuando recibe un 4xx o 5xx.
     if (!response.ok) {
-      throw new Error(`Error ${response.status}: ${response.statusText}`);
+      throw new Error(
+        `Error ${response.status}: ${response.statusText}`,
+      );
     }
 
     return (await response.json()) as PopularMoviesResponse;
