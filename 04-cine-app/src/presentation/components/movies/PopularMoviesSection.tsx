@@ -58,10 +58,7 @@ export const MoviesSection = ({
   if (isLoading) {
     return (
       <View style={styles.stateContainer}>
-        <ActivityIndicator
-          color={styles.loadingIndicator.color}
-          size="large"
-        />
+        <ActivityIndicator color={styles.loadingIndicator.color} size="large" />
         <Text style={styles.stateText}>Cargando películas...</Text>
       </View>
     );
@@ -155,4 +152,3 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
 });
-

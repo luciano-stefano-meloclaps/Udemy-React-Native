@@ -5,8 +5,11 @@ import { useUpcomingMovies } from '../../hooks/useUpcomingMovies';
 /**
  * Componente contenedor (View) para la sección de películas próximas a estrenarse.
  *
- * Arquitectura: View = ViewModel (useUpcomingMovies) + Presentation (MoviesSection)
- * Reutiliza el componente genérico MoviesSection para evitar duplicación de código.
+ * Responsabilidades:
+ * - Obtener datos del hook useUpcomingMovies (ViewModel layer)
+ * - Pasar datos al componente presentacional MoviesSection
+ *
+ * Arquitectura: View = ViewModel (Hook) + Presentation (Component)
  */
 export const UpcomingMoviesView = () => {
   const { movies, isLoading, errorMessage, retry } = useUpcomingMovies();

@@ -5,8 +5,11 @@ import { useTopRatedMovies } from '../../hooks/useTopRatedMovies';
 /**
  * Componente contenedor (View) para la sección de películas mejor calificadas.
  *
- * Arquitectura: View = ViewModel (useTopRatedMovies) + Presentation (MoviesSection)
- * Este patrón se repite para cada sección de películas, evitando código duplicado.
+ * Responsabilidades:
+ * - Obtener datos del hook useTopRatedMovies (ViewModel layer)
+ * - Pasar datos al componente presentacional MoviesSection
+ *
+ * Arquitectura: View = ViewModel (Hook) + Presentation (Component)
  */
 export const TopRatedMoviesView = () => {
   const { movies, isLoading, errorMessage, retry } = useTopRatedMovies();

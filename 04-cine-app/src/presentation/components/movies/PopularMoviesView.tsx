@@ -1,21 +1,21 @@
 import React from 'react';
-import { PopularMoviesSection } from './PopularMoviesSection';
+import { MoviesSection } from './PopularMoviesSection';
 import { usePopularMovies } from '../../hooks/usePopularMovies';
 
 /**
  * Componente contenedor (View) que conecta el ViewModel con los componentes visuales.
  *
- * Este componente es responsable de:
- * 1. Obtener datos usando el hook usePopularMovies (ViewModel)
- * 2. Pasar esos datos al componente de presentación PopularMoviesSection
+ * Responsabilidades:
+ * - Obtener datos del hook usePopularMovies (ViewModel layer)
+ * - Pasar datos al componente presentacional MoviesSection
  *
- * Patrón de arquitectura: View = ViewModel + Presentation Component
+ * Arquitectura: View = ViewModel (Hook) + Presentation (Component)
  */
 export const PopularMoviesView = () => {
   const { movies, isLoading, errorMessage, retry } = usePopularMovies();
 
   return (
-    <PopularMoviesSection
+    <MoviesSection
       movies={movies}
       isLoading={isLoading}
       errorMessage={errorMessage}

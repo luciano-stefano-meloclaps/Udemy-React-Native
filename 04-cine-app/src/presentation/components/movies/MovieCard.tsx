@@ -59,9 +59,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
       </Text>
 
       {/* Calificación - formato: ★ 8.5 */}
-      <Text style={styles.rating}>
-        ★ {movie.vote_average.toFixed(1)}
-      </Text>
+      <Text style={styles.rating}>★ {movie.vote_average.toFixed(1)}</Text>
     </View>
   );
 };
