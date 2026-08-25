@@ -1,13 +1,27 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { usePopularMovies } from '../../hooks/usePopularMovies';
+import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import { PopularMoviesView } from '../../components/movies/PopularMoviesView';
 
 export const HomeScreen = () => {
-  usePopularMovies();
-
   return (
-    <View>
-      <Text>Home Screen Components</Text>
-    </View>
+    <SafeAreaView style={styles.screen}>
+      <Text style={styles.title}>Peliculas populares</Text>
+      <PopularMoviesView />
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  screen: {
+    backgroundColor: '#101827',
+    flex: 1,
+    paddingTop: 24,
+  },
+  title: {
+    color: '#f5f7fa',
+    fontSize: 24,
+    fontWeight: '700',
+    marginBottom: 18,
+    paddingHorizontal: 20,
+  },
+});
