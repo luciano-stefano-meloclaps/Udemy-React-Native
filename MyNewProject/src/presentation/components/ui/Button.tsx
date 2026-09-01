@@ -5,10 +5,9 @@ interface Props {
   text: string;
   style?: StyleProp<ViewStyle>;
   onPress: () => void;
-  label?: string;
 }
 
-export const Button = ({ text, style, onPress, label }: Props) => {
+export const Button = ({ text, style, onPress }: Props) => {
   return (
     <Pressable
       onPress={onPress}
@@ -17,7 +16,6 @@ export const Button = ({ text, style, onPress, label }: Props) => {
         {
           opacity: pressed ? 0.8 : 1,
           backgroundColor: colors.primary,
-          label: label ? label : 'Button',
         },
         style,
       ]}
