@@ -4,14 +4,10 @@
  *
  * @format
  */
-//import { StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import {
-  SafeAreaProvider,
-  //useSafeAreaInsets,
-} from 'react-native-safe-area-context';
-import { StackNavigator } from './navigator/StackNavigator';
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { StackNavigator } from './navigator/StackNavigator';
 
 function App() {
   return (
@@ -22,11 +18,5 @@ function App() {
     </SafeAreaProvider>
   );
 }
-/*
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
-});*/
 
 export default App;

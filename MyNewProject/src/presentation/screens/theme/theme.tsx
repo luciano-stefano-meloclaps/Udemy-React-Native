@@ -38,6 +38,10 @@ export const globalStyles = StyleSheet.create({
     flex: 1,
   },
 
+  bottomSpacer: {
+    marginTop: 30,
+  },
+
   btnPrimary: {
     backgroundColor: colors.primary,
     borderRadius: 10,
