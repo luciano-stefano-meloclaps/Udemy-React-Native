@@ -3,6 +3,7 @@ import { ScrollView, View } from 'react-native';
 //import { Ionicons } from '@react-native-vector-icons/ionicons/static';
 import { globalStyles } from '../theme/theme';
 import { Titles } from '../ui/Titles';
+import { MenuItems } from '../ui/MenuItems';
 
 export const menuItems = [
   // 01-animationMenuItems
@@ -74,10 +75,15 @@ export const HomeScreen = () => {
         <ScrollView>
           <Titles text="Home" safe />
           {menuItems.map((item, index) => (
-            <View key={index}>
-              <Titles text={item.name} />
-            </View>
+            <MenuItems
+              key={item.name + index}
+              {...item}
+              isFirst={index === 0}
+              isLast={index === menuItems.length - 1}
+            />
           ))}
+
+          <View style={{ marginTop: 30 }} />
         </ScrollView>
       </View>
     </View>
