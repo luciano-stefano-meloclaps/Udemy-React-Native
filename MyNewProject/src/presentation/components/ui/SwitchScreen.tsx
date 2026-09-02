@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { CustomView } from './CustomView';
-import { Card } from '../../components/ui/Card';
-import { CustomSwitch } from '../../components/ui/CustomSwitch';
+import { Card } from './Card';
+import { CustomSwitch } from './CustomSwitch';
 
 export const SwitchScreen = () => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -14,7 +14,7 @@ export const SwitchScreen = () => {
         <CustomSwitch
           isOn={isEnabled}
           text="Switch 1"
-          onChange={value => toggleSwitch()}
+          onChange={() => toggleSwitch()}
         />
       </Card>
     </CustomView>

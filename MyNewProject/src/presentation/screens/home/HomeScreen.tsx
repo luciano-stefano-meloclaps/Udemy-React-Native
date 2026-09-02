@@ -1,8 +1,8 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { globalStyles } from '../theme/theme';
-import { Titles } from '../ui/Titles';
-import { MenuItems } from '../ui/MenuItems';
+import { Titles } from '../../components/ui/Titles';
+import { MenuItems } from '../../components/ui/MenuItems';
 import type { IoniconsIconName } from '@react-native-vector-icons/ionicons/static';
 import type { RootStackParams } from '../../../navigator/StackNavigator';
 
@@ -35,8 +35,12 @@ export const menuItems: MenuItem[] = [
   // { name: 'Slides', icon: 'flower-outline', component: 'SlidesScreen' },
   // { name: 'Themes', icon: 'flask-outline', component: 'ChangeThemeScreen' },
   { name: 'Switches', icon: 'toggle-outline', component: 'SwitchScreen' },
-  // { name: 'Alerts', icon: 'alert-circle-outline', component: 'AlertScreen' },
-  // { name: 'TextInputs', icon: 'document-text-outline', component: 'TextInputScreen' },
+  { name: 'Alerts', icon: 'alert-circle-outline', component: 'AlertScreen' },
+  {
+    name: 'TextInputs',
+    icon: 'document-text-outline',
+    component: 'TextInputScreen',
+  },
 ];
 
 export const HomeScreen = () => {
