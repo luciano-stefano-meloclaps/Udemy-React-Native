@@ -28,7 +28,11 @@ export const menuItems: MenuItem[] = [
     icon: 'albums-outline',
     component: 'Animation102Screen',
   },
-  // { name: 'Pull to refresh', icon: 'refresh-outline', component: 'PullToRefreshScreen' },
+  {
+    name: 'Pull to refresh',
+    icon: 'refresh-outline',
+    component: 'PullToRefreshScreen',
+  },
   // { name: 'Section List', icon: 'list-outline', component: 'CustomSectionListScreen' },
   // { name: 'Modal', icon: 'copy-outline', component: 'ModalScreen' },
   // { name: 'InfiniteScroll', icon: 'download-outline', component: 'InfiniteScrollScreen' },
