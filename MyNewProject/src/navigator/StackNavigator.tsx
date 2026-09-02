@@ -6,6 +6,7 @@ import { Animation102Screen } from '../presentation/screens/animations/Animation
 import { SwitchScreen } from '../presentation/components/ui/SwitchScreen';
 import { AlertScreen } from '../presentation/components/ui/AlertScreen';
 import { TextInputScreen } from '../presentation/screens/inputs/TextInputScreen';
+import { PullToRefreshScreen } from '../presentation/components/ui/PullToRefreshScreen';
 // Aca se declaran TODAS las rutas de la app y los parametros que reciben.
 // undefined = esa pantalla no recibe parametros.
 export type RootStackParams = {
@@ -15,6 +16,7 @@ export type RootStackParams = {
   SwitchScreen: undefined;
   AlertScreen: undefined;
   TextInputScreen: undefined;
+  PullToRefreshScreen: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -33,6 +35,10 @@ export const StackNavigator = () => {
       <Stack.Screen name="SwitchScreen" component={SwitchScreen} />
       <Stack.Screen name="AlertScreen" component={AlertScreen} />
       <Stack.Screen name="TextInputScreen" component={TextInputScreen} />
+      <Stack.Screen
+        name="PullToRefreshScreen"
+        component={PullToRefreshScreen}
+      />
     </Stack.Navigator>
   );
 };
