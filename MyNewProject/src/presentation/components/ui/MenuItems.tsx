@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable, Text, View, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import type { StackNavigationProp } from '@react-navigation/stack';
-import { colors } from '../theme/theme';
+import { colors } from '../../screens/theme/theme';
 import {
   Ionicons,
   type IoniconsIconName,

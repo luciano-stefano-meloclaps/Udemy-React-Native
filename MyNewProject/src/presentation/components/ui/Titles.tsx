@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { colors, globalStyles } from '../theme/theme';
+import { colors, globalStyles } from '../../screens/theme/theme';
 import { Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -8,6 +8,7 @@ interface Props {
   text: string;
   safe?: boolean;
   white?: boolean;
+  textAlign?: 'auto' | 'center' | 'left' | 'right' | 'justify' | undefined;
 }
 
 export const Titles = ({ text, safe = false, white = false }: Props) => {
@@ -18,7 +19,8 @@ export const Titles = ({ text, safe = false, white = false }: Props) => {
       style={{
         ...globalStyles.title,
         marginTop: safe ? top : 0,
-        marginBottom: 10,
+        marginBottom: 5,
+        textAlign: 'center',
         color: white ? 'white' : colors.text,
       }}
     >

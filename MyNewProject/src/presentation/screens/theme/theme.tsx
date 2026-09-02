@@ -52,4 +52,13 @@ export const globalStyles = StyleSheet.create({
     color: colors.text,
     fontSize: 16,
   },
+
+  input: {
+    borderWidth: 1,
+    borderColor: colors.primary,
+    borderRadius: 10,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    marginVertical: 5,
+  },
 });
