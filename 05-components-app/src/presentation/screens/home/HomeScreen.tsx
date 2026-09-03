@@ -45,7 +45,7 @@ export const menuItems: MenuItem[] = [
     icon: 'download-outline',
     component: 'InfiniteScrollScreen',
   },
-  // { name: 'Slides', icon: 'flower-outline', component: 'SlidesScreen' },
+  { name: 'Slides', icon: 'flower-outline', component: 'SlidesScreen' },
   // { name: 'Themes', icon: 'flask-outline', component: 'ChangeThemeScreen' },
   { name: 'Switches', icon: 'toggle-outline', component: 'SwitchScreen' },
   { name: 'Alerts', icon: 'alert-circle-outline', component: 'AlertScreen' },
