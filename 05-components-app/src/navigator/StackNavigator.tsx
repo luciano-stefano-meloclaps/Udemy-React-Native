@@ -7,6 +7,9 @@ import { SwitchScreen } from '../presentation/components/ui/SwitchScreen';
 import { AlertScreen } from '../presentation/components/ui/AlertScreen';
 import { TextInputScreen } from '../presentation/screens/inputs/TextInputScreen';
 import { PullToRefreshScreen } from '../presentation/components/ui/PullToRefreshScreen';
+import { CustomSectionListScreen } from '../presentation/components/ui/CustomSectionListScreen';
+import { ModalScreen } from '../presentation/components/ui/ModalScreen';
+import { InfiniteScrollScreen } from '../presentation/components/ui/InfiniteScrollScreen';
 // Aca se declaran TODAS las rutas de la app y los parametros que reciben.
 // undefined = esa pantalla no recibe parametros.
 export type RootStackParams = {
@@ -17,6 +20,9 @@ export type RootStackParams = {
   AlertScreen: undefined;
   TextInputScreen: undefined;
   PullToRefreshScreen: undefined;
+  CustomSectionListScreen: undefined;
+  ModalScreen: undefined;
+  InfiniteScrollScreen: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -38,6 +44,15 @@ export const StackNavigator = () => {
       <Stack.Screen
         name="PullToRefreshScreen"
         component={PullToRefreshScreen}
+      />
+      <Stack.Screen
+        name="CustomSectionListScreen"
+        component={CustomSectionListScreen}
+      />
+      <Stack.Screen name="ModalScreen" component={ModalScreen} />
+      <Stack.Screen
+        name="InfiniteScrollScreen"
+        component={InfiniteScrollScreen}
       />
     </Stack.Navigator>
   );
