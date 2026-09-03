@@ -8,6 +8,7 @@ interface Props {
   text: string;
   safe?: boolean;
   white?: boolean;
+  marginTop?: number;
   textAlign?: 'auto' | 'center' | 'left' | 'right' | 'justify' | undefined;
 }
 
@@ -18,7 +19,7 @@ export const Titles = ({ text, safe = false, white = false }: Props) => {
     <Text
       style={{
         ...globalStyles.title,
-        marginTop: safe ? top : 0,
+        marginTop: safe ? [] : top,
         marginBottom: 5,
         textAlign: 'center',
         color: white ? 'white' : colors.text,

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { ScrollView, View } from 'react-native';
 import { globalStyles } from '../theme/theme';
@@ -33,9 +34,17 @@ export const menuItems: MenuItem[] = [
     icon: 'refresh-outline',
     component: 'PullToRefreshScreen',
   },
-  // { name: 'Section List', icon: 'list-outline', component: 'CustomSectionListScreen' },
-  // { name: 'Modal', icon: 'copy-outline', component: 'ModalScreen' },
-  // { name: 'InfiniteScroll', icon: 'download-outline', component: 'InfiniteScrollScreen' },
+  {
+    name: 'Section List',
+    icon: 'list-outline',
+    component: 'CustomSectionListScreen',
+  },
+  { name: 'Modal', icon: 'copy-outline', component: 'ModalScreen' },
+  {
+    name: 'InfiniteScroll',
+    icon: 'download-outline',
+    component: 'InfiniteScrollScreen',
+  },
   // { name: 'Slides', icon: 'flower-outline', component: 'SlidesScreen' },
   // { name: 'Themes', icon: 'flask-outline', component: 'ChangeThemeScreen' },
   { name: 'Switches', icon: 'toggle-outline', component: 'SwitchScreen' },
@@ -52,7 +61,7 @@ export const HomeScreen = () => {
     <View style={globalStyles.mainContainer}>
       <View style={globalStyles.globalMargin}>
         <ScrollView>
-          <Titles text="Home" safe />
+          <Titles marginTop={80} text="Home" safe />
 
           {menuItems.map((item, index) => (
             <MenuItems
